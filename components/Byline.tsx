@@ -1,4 +1,8 @@
-export default function Byline({ author }) {
+type Props = {
+  author: string;
+};
+
+const Byline: React.FC<Props> = ({ author }) => {
   return (
     <>
       <div className="byline">By {author}</div>
@@ -11,3 +15,5 @@ export default function Byline({ author }) {
     </>
   )
 }
+
+export default Byline;
