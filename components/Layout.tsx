@@ -1,4 +1,7 @@
-export default function Layout({ children }) {
+import { NextPage } from 'next';
+import { ReactNode } from 'react';
+
+const Layout: ReactNode = ({ children }: { children: NextPage}) => {
   return (
     <>
       {children}
@@ -12,3 +15,5 @@ export default function Layout({ children }) {
     </>
   )
 }
+
+export default Layout;
