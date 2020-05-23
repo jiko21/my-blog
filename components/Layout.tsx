@@ -1,7 +1,7 @@
 import { NextPage } from 'next';
 import { ReactNode } from 'react';
 
-const Layout: ReactNode = ({ children }: { children: NextPage}) => {
+const Layout: ReactNode = ({ children }: { children: NextPage }) => {
   return (
     <>
       {children}
@@ -13,7 +13,7 @@ const Layout: ReactNode = ({ children }: { children: NextPage}) => {
         }
       `}</style>
     </>
-  )
-}
+  );
+};
 
 export default Layout;
