@@ -10,7 +10,7 @@ const BlogLink: React.FC<Props> = ({ blogInfo }) => {
   return (
     <>
       <div className="blog-link-card">
-        <Link href="#">
+        <Link href="/posts/[id]" as={`/posts/${blogInfo.id}`}>
           <a>{blogInfo.title}</a>
         </Link>
         <br />

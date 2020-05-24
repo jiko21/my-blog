@@ -9,7 +9,6 @@ type PathList = {
 };
 
 const Post = ({ content }: { content: BlogData }) => {
-  console.log(content.date);
   return (
     <>
       <Layout>

@@ -43,7 +43,6 @@ export const getPost = async (id: string): Promise<BlogData> => {
   const fileData = fs.readFileSync(fileName, 'utf8');
   const data = fm(fileData);
   const body = await remark().use(html).process(data.body);
-  console.log(body.toString().replace(imagePattern, '$1'));
   return {
     id,
     title: data.attributes.title,
