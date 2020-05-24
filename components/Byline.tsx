@@ -1,5 +1,7 @@
+export { BlogInfo } from '~/lib/blog';
+
 type Props = {
-  author: string;
+  blogInfo: BlogInfo;
 };
 
 const Byline: React.FC<Props> = ({ author }) => {
@@ -13,7 +15,7 @@ const Byline: React.FC<Props> = ({ author }) => {
         }
       `}</style>
     </>
-  )
-}
+  );
+};
 
 export default Byline;

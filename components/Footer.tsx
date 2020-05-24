@@ -21,9 +21,11 @@ const Footer: React.FC<FooterProps> = ({}) => {
       <style jsx>{`
         footer {
           background-color: #0c0c0c;
+          bottom: 0;
           color: #c0c0c0;
-          padding: 20px;
+          padding: 20px 0;
           text-align: center;
+          width: 100%;
         }
         .contents {
           display: flex;
