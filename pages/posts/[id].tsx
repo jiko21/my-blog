@@ -4,10 +4,11 @@ import { BlogData } from '~/lib/blog';
 import BlogDate from '~/components/Date';
 
 type PathList = {
-  paths: { id: string }[];
+  paths: Param[];
   fallback: boolean;
 };
 
+type Param = { params: { id: string } };
 const Post = ({ content }: { content: BlogData }) => {
   return (
     <>
@@ -27,7 +28,7 @@ const Post = ({ content }: { content: BlogData }) => {
   );
 };
 
-export const getStaticProps = async ({ params }: { id: string }) => {
+export const getStaticProps = async ({ params }: { params: { id: string } }) => {
   const content = await getPost(params.id);
   return {
     props: {

@@ -1,7 +1,6 @@
-import { NextPage } from 'next';
 import Layout from '~/components/Layout';
 import BlogLink from '~/components/BlogLink';
-import { BlogInfo, getSortedBlogInfo } from '../lib/blog.ts';
+import { BlogInfo, getSortedBlogInfo } from '~/lib/blog.ts';
 
 export const config = {
   amp: true,
@@ -16,7 +15,7 @@ export const getStaticProps = async () => {
   };
 };
 
-const IndexPage: NextPage = ({ allPosts }: { allPosts: BlogInfo[] }) => {
+const IndexPage = ({ allPosts }: { allPosts: BlogInfo[] }) => {
   return (
     <Layout>
       <amp-img

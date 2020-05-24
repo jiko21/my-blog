@@ -1,13 +1,11 @@
-import { NextPage } from 'next';
 import Head from 'next/head';
-import { ReactNode } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 
 const name = "@jiko21's blog";
 export const siteTitle = "@jiko21's blog";
 
-const Layout: ReactNode = ({ children }: { children: NextPage }) => {
+const Layout = ({ children }: { children: any }) => {
   return (
     <>
       <Head>

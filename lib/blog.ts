@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import * as fm from 'front-matter';
+import fm from 'front-matter';
 import remark from 'remark';
 import html from 'remark-html';
 
@@ -45,8 +45,8 @@ export const getPost = async (id: string): Promise<BlogData> => {
   const body = await remark().use(html).process(data.body);
   return {
     id,
-    title: data.attributes.title,
-    date: data.attributes.date,
+    title: (data.attributes as BlogInfo).title,
+    date: (data.attributes as BlogInfo).date,
     content: body.toString().replace(imagePattern, replacedImageTag),
   };
 };
@@ -59,8 +59,8 @@ export const getSortedBlogInfo = (): BlogInfo[] => {
     const content = fm(data);
     return {
       id: fileName.replace(/\.md$/, ''),
-      title: content.attributes.title,
-      date: content.attributes.date,
+      title: (content.attributes as BlogInfo).title,
+      date: (content.attributes as BlogInfo).date,
     };
   });
   return allPostsData.sort((a: BlogInfo, b: BlogInfo) => {
