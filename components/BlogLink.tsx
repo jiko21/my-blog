@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import BlogDate from './Date';
-import { BlogInfo } from '~/lib/blog.ts';
+import { BlogInfo } from '~/lib/blog';
 
 type Props = {
   blogInfo: BlogInfo;
