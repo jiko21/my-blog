@@ -9,12 +9,11 @@
   },
   "dependencies": {
     "date-fns": "^2.14.0",
+    "flav-md": "0.0.6",
     "front-matter": "^4.0.0",
     "next": "latest",
     "react": "^16.7.0",
-    "react-dom": "^16.7.0",
-    "remark": "^12.0.0",
-    "remark-html": "^11.0.2"
+    "react-dom": "^16.7.0"
   },
   "license": "ISC",
   "devDependencies": {
