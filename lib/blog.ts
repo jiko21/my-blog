@@ -1,8 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import fm from 'front-matter';
-import remark from 'remark';
-import html from 'remark-html';
+import { createFlavMd } from 'flav-md';
 
 export type BlogInfo = {
   id: string;
@@ -16,6 +15,7 @@ export type BlogData = BlogInfo & {
 
 const baseDir = process.cwd();
 const baseFilePath = path.join(baseDir, 'posts');
+const cssStyleFile = path.join(baseDir, 'styles/blog.css');
 
 export const getAllPostIds = () => {
   const fileNames = fs.readdirSync(baseFilePath);
@@ -28,26 +28,16 @@ export const getAllPostIds = () => {
   });
 };
 
-const imagePattern = /<p><img src=\"\.\.\/public(.+)\"><\/p>/;
-
-const replacedImageTag = `
-<div style="text-align: center;">
-  <img
-  src="$1"
-  width="50%"
-  >
-</div>
-`;
 export const getPost = async (id: string): Promise<BlogData> => {
   const fileName = path.join(baseFilePath, `${id}.md`);
   const fileData = fs.readFileSync(fileName, 'utf8');
   const data = fm(fileData);
-  const body = await remark().use(html).process(data.body);
+  const body = createFlavMd().readMdText(data.body).readCssFile(cssStyleFile).build();
   return {
     id,
     title: (data.attributes as BlogInfo).title,
     date: (data.attributes as BlogInfo).date,
-    content: body.toString().replace(imagePattern, replacedImageTag),
+    content: body,
   };
 };
 
