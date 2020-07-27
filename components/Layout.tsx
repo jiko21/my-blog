@@ -2,8 +2,8 @@ import Head from 'next/head';
 import Header from './Header';
 import Footer from './Footer';
 
-const name = "@jiko21's blog";
-export const siteTitle = "@jiko21's blog";
+const name = '@jiko21\'s blog';
+export const siteTitle = '@jiko21\'s blog';
 
 const Layout = ({ children }: { children: any }) => {
   return (
@@ -28,7 +28,6 @@ const Layout = ({ children }: { children: any }) => {
           font-family: Roboto, sans-serif;
           color: #444;
           margin: 0;
-          padding: 0;
         }
         main {
           margin: 5% 10%;
