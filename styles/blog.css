@@ -1,0 +1,29 @@
+.flav-md-h1 {
+  margin: 20px 0;
+}
+
+.flav-md-h:first-letter {
+  font-size: larger;
+  color: #3c87eb;
+}
+
+.flav-md-h2 {
+  margin: 10px 0;
+}
+
+.flav-md-h3 {
+  margin: 5px 0;
+}
+
+.flav-md-p {
+  margin: 2px 10px;
+}
+
+.flav-md-li {
+  margin: 1px 4px;
+}
+
+.flav-md-code-inline {
+  color: #f56733;
+  font-weight: bold;
+}
